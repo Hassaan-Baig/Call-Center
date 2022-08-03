@@ -1,11 +1,11 @@
 import React from 'react';
 import { CDBFooter, CDBFooterLink, CDBBox, CDBBtn, CDBIcon } from 'cdbreact';
-import mylogo from '/Users/hassaanbaig/Desktop/call_center/src/Images/call-center-service.png';
+import mylogo from '../Images/call-center-service.png';
 
 export const Footer = () => {
   return (
     <CDBFooter className="shadow" >
-    <CDBBox style={{backgroundColor:'rgba(200, 216, 228, 1)'}}>
+    <CDBBox style={{backgroundColor:'rgba(43, 103, 119, 0.5)'}}>
       <CDBBox display="flex" flex="column" className="mx-auto py-5" style={{ width: '90%'}}>
         <CDBBox display="flex" justifyContent="between" className="flex-wrap">
           <CDBBox>
@@ -60,7 +60,7 @@ export const Footer = () => {
 
       {/*--------------------------------------------------------------- */}
 
-      <CDBBox style={{backgroundColor:'rgba(43, 103, 119, 0.5)'}}>
+      <CDBBox style={{backgroundColor:'rgba(200, 216, 228, 1)'}}>
       <CDBBox
         display="flex"
         justifyContent="between"
