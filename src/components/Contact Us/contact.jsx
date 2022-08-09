@@ -1,6 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
+import { Alert } from 'react-bootstrap';
+import {database} from '../../Backend/firebase'
+import {ref,push,child,update} from "firebase/database";
 
+import './style.scss'
 export const Contact = () => {
     const [firstname, setfirstname] = useState('')
     const [lastname, setlastname] = useState('')
@@ -13,13 +17,41 @@ export const Contact = () => {
     const [state, setstate] = useState('')
     const [zip, setzip] = useState('')
     const [country, setcountry] = useState('')
+    const [askanything, setaskanything] = useState('')
+    const [allentry, setAllentry] = useState([])
 
+    const submitForm=(e)=>{
+        e.preventDefault();
+        const newEntry = {
+            firstname:firstname,
+            lastname:lastname,
+            jobtitle:jobtitle,
+            companyname:companyname,
+            phone:phone,
+            email:email,
+            address:address,
+            city:city,
+            state:state,
+            zip:zip,
+            country:country,
+            askanything:askanything
+        }
+            setAllentry([...allentry,newEntry])
+            console.log("entry",allentry);
+            console.log("new entry",newEntry);
 
+            alert(newEntry)
+            const newPostKey = push(child(ref(database), 'posts')).key;
+            const updates = {};
+            updates['/' + newPostKey] = newEntry
+            return update(ref(database), updates);
+    }
     return (
     <>
-        <div>Fill out the form below and we’ll get back to you as quickly as possible. If you need a quicker response, feel free to call us at 866-704-5580 or email us directly at info@acttoday.com.</div>
+    {/* <BoxContainer> */}
+        <div className='Buttonsubmit'>Fill out the form below and we’ll get back to you as quickly as possible. If you need a quicker response, feel free to call us at 866-704-5580 or email us directly at info@acttoday.com.</div>
         <div className='create'>
-            <form action="">
+            <form action="" onSubmit={submitForm}>
                 <label >First Name : </label>
                 <input type="text"  
                     required
@@ -90,16 +122,26 @@ export const Contact = () => {
                     onChange={(e)=>setzip(e.target.value) }
                 />
                 <br />
-                 <label >Country : </label>
+                <label >Country : </label>
                 <input type="text"  
                     required
                     value={country}
                     onChange={(e)=>setcountry(e.target.value) }
                 />
                 <br />
-                
+                <label >Ask Anything: </label>
+                <input type="textarea"  
+                    required
+                    value={askanything}
+                    onChange={(e)=>setaskanything(e.target.value) }
+                />
+                <br />
+                <div className='Buttonsubmit'>
+                    <button className="btn btn-primary" type='submit'>confirm </button>
+                </div>
             </form>
         </div>
+        {/* </BoxContainer> */}
     </>
     )
 }

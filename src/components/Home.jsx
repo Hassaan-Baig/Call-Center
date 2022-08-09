@@ -8,7 +8,56 @@ import Carousel from 'react-bootstrap/Carousel';
 import image1 from '../Images/callcenter1.jpg'
 import image2 from '../Images/callcenter2.jpg'
 import image3 from '../Images/callcenter3.jpg'
+import './style.scss'
+class CardHeader extends React.Component {
+  render() {
+    const { image } = this.props;
+    var style = { 
+        backgroundImage: 'url(' + image + ')',
+    };
+    return (
+      <header style={style} id={image} className="card-header">
+        <h4 className="card-header--title">News</h4>
+      </header>
+    )
+  }
+}
 
+class Button extends React.Component {
+  render() {
+    return (
+      <button className="button button-primary">
+        <i className="fa fa-chevron-right"></i> Find out more
+      </button>
+    )
+  }
+}
+
+class CardBody extends React.Component {
+  render() {
+    return (
+      <div className="card-body">
+        
+        <h2>{this.props.title}</h2>
+        
+        <p className="body-content">{this.props.text}</p>
+        
+        <Button />
+      </div>
+    )
+  }
+}
+
+class Card3 extends React.Component {
+  render() {
+    return (
+      <article className="card">
+        <CardHeader image={this.props.image}/>
+        <CardBody title={this.props.title} text={this.props.text}/>
+      </article>
+    )
+  }
+}
 
 export const Home = () => {
   return (
@@ -54,7 +103,32 @@ export const Home = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-
+    {/* Cards */}
+  <div className='Cardsalignment'>
+      <Card3 
+        image={'https://source.unsplash.com/user/erondu/600x400'} 
+        title={'What happened in Thialand?'}
+        text={'Kayaks crowd Three Sister Springs, where people and manatees maintain controversial coexistence'}
+      />
+      
+      <Card3 
+        image={'https://source.unsplash.com/user/erondu/600x400'} 
+        title={'What happened in Thialand?'}
+        text={'Kayaks crowd Three Sister Springs, where people and manatees maintain controversial coexistence'}
+      />
+      
+      <Card3 
+        image={'https://source.unsplash.com/user/erondu/600x400'} 
+        title={'What happened in Thialand?'}
+        text={'Kayaks crowd Three Sister Springs, where people and manatees maintain controversial coexistence'}
+      />
+      
+      <Card3 
+        image={'https://source.unsplash.com/user/erondu/600x400'} 
+        title={'What happened in Thialand?'}
+        text={'Kayaks crowd Three Sister Springs, where people and manatees maintain controversial coexistence'}
+      />
+    </div>
    {/*-------------------------__CEO-MESSAGE__-----------------------*/}
 
     <p style={{padding:'20px 120px 20px 120px', backgroundColor:'rgba(200, 216, 228, 1)'}}>

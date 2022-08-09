@@ -4,6 +4,7 @@ import {Home} from './components/Home';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import { Contact } from './components/Contact Us/contact';
+import Difference from './components/Difference'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 function App() {
@@ -14,6 +15,8 @@ function App() {
         <Route path='/' exact element={<Home/>}/>
         <Route path='/About' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/Difference' element={<Difference/>}/>
+
 
       </Routes>
       <Footer/>
