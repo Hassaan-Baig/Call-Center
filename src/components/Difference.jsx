@@ -4,10 +4,18 @@ import people from '../Images/people.png'
 import process from '../Images/process.png' 
 import tech from '../Images/tech.png' 
 import PEOPLE from '../Images/PEOPLE.jpeg'
+import {useNavigate} from 'react-router-dom';
 
+const Difference= () => {
 
-const About= () => {
-  return (
+    const navigate = useNavigate();
+    const navigateContact = () => {
+        // 👇️ navigate to /
+        navigate('/contact');
+      };
+
+    return (
+
     <>
     <br></br>
     {/* -------------------- THE DIFFERENCE ------------ */}
@@ -63,7 +71,7 @@ const About= () => {
 On top of vigorous best-practice training for properly interfacing with your customers, ACT agents are thoroughly versed in the specifics of your program. This allows them to speak confidently and naturally about your products or services, without sounding scripted. Agents are given continued education, then routinely reviewed and tested to ensure compliance and continuity in your messaging.<br></br><br></br>
 
 We work nationwide 24/7 from domestic and near-shore operation centers, providing service in 8 different languages including English, Spanish, Mandarin, Cantonese, Punjabi, Vietnamese, Armenian, and Tagolog.<br></br><br></br>
-            <Button style={{color:'purple'}} variant="outline-info">Get Started Today</Button>
+            <Button style={{color:'purple'}} variant="outline-info" onClick={navigateContact}>Get Started Today</Button>
         </div>
 
         <div  style={{padding:'0px 120px 20px 0px',alignSelf:'center',width:'45%'}} >
@@ -90,7 +98,7 @@ We work nationwide 24/7 from domestic and near-shore operation centers, providin
             <p style={{color:'purple', fontWeight:'bold'}}>Custom Solutions</p>
             This starts with a highly refined base routine for each solution, one that is already proven and subsequently evolved with our knowledge and experience from more than 17 years in business. From there, we analyze the specific needs of your project and utilize Six Sigma methodologies to efficiently adapt the solution to your specific goals.<br></br><br></br>
 Your ACT project managers work with you to develop a communication strategy that not only delivers superior results, but will do so on the timeline you need and with a budget you can afford. Don’t see your particular industry listed or the service you need mentioned anywhere? It’s only because this website would need to be endless to list them all. Contact us today to discuss a custom program developed for your unique needs.<br></br><br></br>
-            <Button style={{color:'purple'}} variant="outline-info">Get Started Today</Button>
+            <Button style={{color:'purple'}} variant="outline-info" onClick={navigateContact}>Get Started Today</Button>
 
         </div>
         <div style={{ fontFamily:'Helvetica', padding:'0px 80px 175px 120px',alignSelf:'center', width:'50%' , fontSize:'18px'}}>
@@ -118,7 +126,7 @@ Paired with our experienced work force management team, you’re able to make ac
                 Whether it’s phone, chat, email, or direct mail, our programs incorporate multiple channels to match your customers preferred communication method. This now includes self-service options such as custom Interactive Voice Response (IVR) platform development, to engage your customers with automated voice, web chat, and e-mail correspondence options.<br></br><br></br>
                 <p style={{color:'purple', fontWeight:'bold'}}>Multi-Channel-Solutions</p>
                 Our large call centers have the ability to handle programs of any size. Once launched, they can scale up to meet your growing need for additional resources or services. This also greatly reduces the lead time required to deploy new programs.<br></br><br></br>
-                <Button style={{color:'purple'}} variant="outline-info">Get Started Today</Button>
+                <Button style={{color:'purple'}} variant="outline-info" onClick={navigateContact}>Get Started Today</Button>
 
             </div>
             <div style={{ fontFamily:'Helvetica', padding:'0px 80px 175px 120px',alignSelf:'center', width:'50%' , fontSize:'18px'}}>
@@ -136,4 +144,4 @@ Paired with our experienced work force management team, you’re able to make ac
   )
 }
 
-export default About
+export default Difference

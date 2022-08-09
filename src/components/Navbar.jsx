@@ -18,16 +18,13 @@ function Naavbar() {
                 <Link to="/" style={{ textDecoration: 'none', color:'black' }}>Home</Link>
                 </Nav.Link>
                 <Nav.Link >
-                <Link to="/About" style={{ textDecoration: 'none', color:'black' }}> About CT</Link>
+                <Link to="/About" style={{ textDecoration: 'none', color:'black' }}> About</Link>
                 </Nav.Link>
                 <Nav.Link >
                 <Link to="/Difference" style={{ textDecoration: 'none', color:'black' }}> CT Difference</Link>
                 </Nav.Link>
-                <Nav.Link href="#features">
-                <Link to="#features" style={{ textDecoration: 'none', color:'black' }}> Newsroom</Link>
-                </Nav.Link>
-                <Nav.Link href="#pricing">
-                <Link to="#features" style={{ textDecoration: 'none', color:'black' }}>Careers</Link>
+                <Nav.Link >
+                <Link to="/Cyber" style={{ textDecoration: 'none', color:'black' }}> Cyber Security</Link>
                 </Nav.Link>
                 <Nav.Link>
                   <Link to="/contact" style={{ textDecoration: 'none', color:'black' }}>Contact Us</Link>
